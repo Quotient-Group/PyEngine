@@ -61,12 +61,12 @@ class Button(GUIElement):
 
     @state
     def clicked(self):
-        self.select_sound.play()
         self.at_click()
+        self.select_sound.play()
         self.new_tween_stream()
         self.scale_to_default(duration=0.05, easing_func=ease_out_quad)
-        self.do(lambda: self.set_state(self.active))
         self.do(lambda: self.scale_by(factor=1.1, duration=0.05, easing_func=ease_out_quad))
+        self.do(lambda: self.set_state(self.active))
         def update(dt):
             ...
         def draw(surface: pygame.Surface):

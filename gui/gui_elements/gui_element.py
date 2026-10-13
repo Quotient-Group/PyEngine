@@ -49,7 +49,7 @@ class GUIElement(StateObject, TweenObject):
             if uv_pos is None:
                 raise ValueError(f"Got neither uv_rect nor uv_pos")
             if not texture:
-                    raise ValueError(f"Got uv_pos but not texture")
+                raise ValueError(f"Got uv_pos but not texture")
 
             self.set_uv_rect(uv_rect=(0.0,0.0,1.0,1.0))
             self.set_uv_pos(uv_pos=uv_pos)
