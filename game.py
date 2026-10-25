@@ -15,6 +15,8 @@ from entity.player import Player
 from utils import *
 
 
+
+
 class Game(StateObject, TweenObject):
     def __init__(self, display: pygame.Surface):
         super().__init__()

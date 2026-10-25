@@ -6,6 +6,11 @@ import asyncio
 
 from utils import *
 
+# On Mac, this removes conflicts with other fullscreen windows (otherwise it crashes during fullscreen)
+if sys.platform == "darwin":
+    import os
+    os.environ['SDL_VIDEO_MAC_FULLSCREEN_SPACES'] = '0'
+
 pygame.init()
 pygame.mixer.init()
 
