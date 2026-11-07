@@ -37,6 +37,8 @@ import pygame
 from functools import wraps
 from types import FunctionType as function
 
+from tween import TweenObject
+
 
 def state(func):
     @wraps(func)
@@ -92,6 +94,8 @@ class StateObject:
 
     def set_state(self, state: function):
         self.state_manager.set_state(state)
+        if isinstance(self, TweenObject):
+            self.new_tween_stream()
 
 
     def update(self, dt):

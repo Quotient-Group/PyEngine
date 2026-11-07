@@ -62,7 +62,6 @@ class Game(StateObject, TweenObject):
 
     @state
     def main_menu(self):
-        self.new_tween_stream()
         self.gui_manager.clear()
 
         pygame.mixer.music.load("assets/music/music.ogg")
@@ -107,7 +106,6 @@ class Game(StateObject, TweenObject):
 
     @state
     def exit(self):
-        self.new_tween_stream()
         self.wait(duration=0.25)
         self.do(lambda: pygame.quit())
         self.do(lambda: sys.exit())
